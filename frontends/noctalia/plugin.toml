@@ -1,0 +1,158 @@
+id = "broli/adsymon"
+name = "Adsymon"
+version = "0.1.0"
+plugin_api = 43
+author = "carlos"
+description = "Display adsymon system metrics from status.json"
+license = "MIT"
+
+[[panel]]
+id = "quick_setup"
+entry = "panel.luau"
+
+[[setting]]
+key = "status_file"
+type = "file"
+label_key = "settings.status_file.label"
+description_key = "settings.status_file.desc"
+default = "/run/user/1000/adsymon/status.json"
+
+[[setting]]
+key = "poll_interval_ms"
+type = "int"
+label_key = "settings.poll_interval_ms.label"
+description_key = "settings.poll_interval_ms.desc"
+default = 1000
+min = 100
+max = 60000
+
+[[widget]]
+id = "group_left"
+entry = "group.luau"
+description = "Configurable adsymon metric group (slot 1)"
+
+[widget.actions]
+left = "panel-toggle broli/adsymon:quick_setup"
+
+[[widget.setting]]
+key = "metrics"
+type = "string_map"
+label_key = "widget.group.metrics.label"
+description_key = "widget.group.metrics.desc"
+default = {}
+
+[[widget.setting]]
+key = "separator"
+type = "string"
+label_key = "widget.group.separator.label"
+default = "  |  "
+
+[[widget]]
+id = "group_center"
+entry = "group.luau"
+description = "Configurable adsymon metric group (slot 2)"
+
+[widget.actions]
+left = "panel-toggle broli/adsymon:quick_setup"
+
+[[widget.setting]]
+key = "metrics"
+type = "string_map"
+label_key = "widget.group.metrics.label"
+description_key = "widget.group.metrics.desc"
+default = {}
+
+[[widget.setting]]
+key = "separator"
+type = "string"
+label_key = "widget.group.separator.label"
+default = "  |  "
+
+[[widget]]
+id = "group_right"
+entry = "group.luau"
+description = "Configurable adsymon metric group (slot 3)"
+
+[widget.actions]
+left = "panel-toggle broli/adsymon:quick_setup"
+
+[[widget.setting]]
+key = "metrics"
+type = "string_map"
+label_key = "widget.group.metrics.label"
+description_key = "widget.group.metrics.desc"
+default = {}
+
+[[widget.setting]]
+key = "separator"
+type = "string"
+label_key = "widget.group.separator.label"
+default = "  |  "
+
+[[widget]]
+id = "cpu"
+entry = "cpu.luau"
+description = "CPU usage and temperature"
+
+[[widget.setting]]
+key = "show_temp"
+type = "bool"
+label_key = "widget.cpu.show_temp.label"
+default = true
+
+[[widget]]
+id = "memory"
+entry = "memory.luau"
+description = "RAM and swap usage"
+
+[[widget.setting]]
+key = "show_swap"
+type = "bool"
+label_key = "widget.memory.show_swap.label"
+default = false
+
+[[widget]]
+id = "gpu"
+entry = "gpu.luau"
+description = "GPU usage, VRAM, and temperature"
+
+[[widget.setting]]
+key = "device"
+type = "string"
+label_key = "widget.gpu.device.label"
+description_key = "widget.gpu.device.desc"
+default = "pci-0000:01:00.0"
+
+[[widget.setting]]
+key = "show_vram"
+type = "bool"
+label_key = "widget.gpu.show_vram.label"
+default = true
+
+[[widget.setting]]
+key = "show_temp"
+type = "bool"
+label_key = "widget.gpu.show_temp.label"
+default = true
+
+[[widget]]
+id = "disk"
+entry = "disk.luau"
+description = "Disk I/O and temperature"
+
+[[widget.setting]]
+key = "device"
+type = "string"
+label_key = "widget.disk.device.label"
+default = "nvme0n1"
+
+[[widget]]
+id = "fans"
+entry = "fans.luau"
+description = "Fan RPM sensor"
+
+[[widget.setting]]
+key = "device"
+type = "string"
+label_key = "widget.fans.device.label"
+default = "hwmon4/fan1"

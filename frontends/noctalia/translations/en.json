@@ -1,0 +1,17 @@
+{
+  "settings.status_file.label": "adsymon status.json path",
+  "settings.status_file.desc": "Path to status.json written by adsymon in tmpfs",
+  "settings.poll_interval_ms.label": "Poll interval (ms)",
+  "settings.poll_interval_ms.desc": "How often widgets re-read status.json",
+  "widget.group.metrics.label": "Metrics (JSON path -> Display format)",
+  "widget.group.metrics.desc": "Left: full path from status.json (e.g. gpu.pci-0000:01:00.0.usage_pct). Right: format — {} (value), {03} / {05.1} (zero-padded), or {h} (human size). (Reversed order also works.)",
+  "widget.group.separator.label": "Item separator",
+  "widget.cpu.show_temp.label": "Show CPU temperature",
+  "widget.memory.show_swap.label": "Show swap usage",
+  "widget.gpu.device.label": "GPU device ID",
+  "widget.gpu.device.desc": "Hardware ID from `adsymon list gpu`, e.g. pci-0000:01:00.0",
+  "widget.gpu.show_vram.label": "Show VRAM usage",
+  "widget.gpu.show_temp.label": "Show GPU temperature",
+  "widget.disk.device.label": "Disk device name (e.g. nvme0n1)",
+  "widget.fans.device.label": "Fan sensor ID (e.g. hwmon4/fan1)"
+}
