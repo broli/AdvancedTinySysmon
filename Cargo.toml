@@ -2,11 +2,11 @@
 name = "advanced-tiny-sysmon"
 version = "0.1.0"
 edition = "2024"
-description = "Tiny, fast, low-overhead Rust system monitoring daemon exposing metrics to RAM-backed files for status bars and consumers"
+description = "System monitoring daemon writing metrics to tmpfs"
 license = "MIT"
 
 [[bin]]
-name = "atsm"
+name = "adsymon"
 path = "src/main.rs"
 
 [profile.release]
